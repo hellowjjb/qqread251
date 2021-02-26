@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/Irreversibles/QQread ~/QQread
+          git clone https://github.com/hellowjjb/qqread251 ~/qqread251
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -30,13 +30,13 @@ jobs:
       - name: npm install
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/QQread
+          cd ~/qqread251
           npm install
       - name: '运行 【企鹅读书】'
         if: env.QQREAD_TIMEHD
         run: |
-          cd ~/QQread
-          node Task/qqreads.js
+          cd ~/qqread251
+          node Task/qqreadnode.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
